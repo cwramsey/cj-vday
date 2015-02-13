@@ -157,6 +157,11 @@ function initPhotos() {
         clearInterval(go);
       }
     }, delay * 2);
+
+    var music = setInterval(function() {
+      $('iframe').remove();
+      $('body').append('<iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/-WaQJMVpdyU?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+    }, 240000);
   });
 
 </script>
@@ -242,6 +247,7 @@ function initPhotos() {
     <img src="slides/71.jpg" height="400" />
   </div>
 
+  <iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/-WaQJMVpdyU?autoplay=1" frameborder="0" allowfullscreen></iframe>
 </body>
 </html>
 
