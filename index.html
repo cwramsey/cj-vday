@@ -59,11 +59,6 @@ html, body {
   color: #bbf;
 }
 
-  img {
-    display: none; !important
-    max-height: 300px;
-  }
-
 </style>
 
 <script type="text/javascript" src="jquery.js"></script>
@@ -101,8 +96,8 @@ function initPhotos() {
   $('#lighttable img').each( function(index) {
 
     // Set a random position and angle for this photo
-    var left = Math.floor( Math.random() * 450 + 100 );
-    var top = Math.floor( Math.random() * 100 + 100 );
+    var left = Math.floor( Math.random() * 450 + 50 );
+    var top = Math.floor( Math.random() * 100 + 50 );
     var angle = Math.floor( Math.random() * 60 - 30 );
     $(this).css( 'left', left+'px' );
     $(this).css( 'top', top+'px' );
@@ -139,7 +134,7 @@ function initPhotos() {
       $(this).css( 'z-index', newImageZIndex++ );
 
       // Gradually reduce the photo's dimensions to normal, fading it in as we go
-      $(this).animate( { width: imgWidth, height: imgHeight, opacity: .95 }, 1200 );
+      $(this).animate( { width: imgWidth, height: imgHeight }, 1200 );
     } );
 
     // Hack for browsers that don't fire load events for cached images
@@ -151,12 +146,17 @@ function initPhotos() {
 
   $(document).ready(function() {
     img = 0;
-
+    delay = 4000;
 
     var go = setInterval(function() {
-      $('img:eq('+img+')').fadeIn().delay(1000).fadeOut();
+      console.log(img)
+      $('#lighttable img:eq('+img+')').animate({opacity: 0.95}, delay * 0.5).delay(delay).fadeOut();
       img++;
-    }, 1000);
+
+      if (img >= $('#lighttable img').length) {
+        clearInterval(go);
+      }
+    }, delay * 2);
   });
 
 </script>
@@ -167,13 +167,78 @@ function initPhotos() {
   <div id="wooden-table"><img src="images/wooden-table.jpg" alt="Wooden table image" /></div>
 
   <div id="description">
-    <h1>Kitchen Table | <span style="font-weight: normal;">A "light table" with draggable photos using CSS3 and jQuery | � Elated.com | <a href="http://www.elated.com/articles/kitchen-table-slick-photo-light-table-css3-jquery/">Back to Tutorial</a></span></h1>
+    <h1><span style="font-weight: normal;">C+J = Pretty Awesome</span></h1>
   </div>
 
   <div id="lighttable">
-    <img src="slides/1.jpg" />
-    <img src="slides/2.jpg" />
-    <img src="slides/3.jpg" />
+    <img src="slides/1.jpg" height="400" />
+    <img src="slides/2.jpg" height="400" />
+    <img src="slides/4.jpg" height="400" />
+    <img src="slides/5.jpg" height="400" />
+    <img src="slides/6.jpg" height="400" />
+    <img src="slides/7.jpg" height="400" />
+    <img src="slides/8.jpg" height="400" />
+    <img src="slides/9.jpg" height="400" />
+    <img src="slides/10.jpg" height="400" />
+    <img src="slides/11.jpg" height="400" />
+    <img src="slides/12.jpg" height="400" />
+    <img src="slides/13.jpg" height="400" />
+    <img src="slides/14.jpg" height="400" />
+    <img src="slides/15.jpg" height="400" />
+    <img src="slides/16.jpg" height="400" />
+    <img src="slides/17.jpg" height="400" />
+    <img src="slides/18.jpg" height="400" />
+    <img src="slides/19.jpg" height="400" />
+    <img src="slides/20.jpg" height="400" />
+    <img src="slides/21.jpg" height="400" />
+    <img src="slides/22.jpg" height="400" />
+    <img src="slides/23.jpg" height="400" />
+    <img src="slides/24.jpg" height="400" />
+    <img src="slides/25.jpg" height="400" />
+    <img src="slides/26.jpg" height="400" />
+    <img src="slides/27.jpg" height="400" />
+    <img src="slides/28.jpg" height="400" />
+    <img src="slides/29.jpg" height="400" />
+    <img src="slides/30.jpg" height="400" />
+    <img src="slides/31.jpg" height="400" />
+    <img src="slides/32.jpg" height="400" />
+    <img src="slides/33.jpg" height="400" />
+    <img src="slides/34.jpg" height="400" />
+    <img src="slides/35.jpg" height="400" />
+    <img src="slides/36.jpg" height="400" />
+    <img src="slides/37.jpg" height="400" />
+    <img src="slides/38.jpg" height="400" />
+    <img src="slides/39.jpg" height="400" />
+    <img src="slides/40.jpg" height="400" />
+    <img src="slides/41.jpg" height="400" />
+    <img src="slides/42.jpg" height="400" />
+    <img src="slides/43.jpg" height="400" />
+    <img src="slides/44.jpg" height="400" />
+    <img src="slides/45.jpg" height="400" />
+    <img src="slides/46.jpg" height="400" />
+    <img src="slides/47.jpg" height="400" />
+    <img src="slides/48.jpg" height="400" />
+    <img src="slides/50.jpg" height="400" />
+    <img src="slides/51.jpg" height="400" />
+    <img src="slides/52.jpg" height="400" />
+    <img src="slides/53.jpg" height="400" />
+    <img src="slides/54.jpg" height="400" />
+    <img src="slides/55.jpg" height="400" />
+    <img src="slides/56.jpg" height="400" />
+    <img src="slides/57.jpg" height="400" />
+    <img src="slides/58.jpg" height="400" />
+    <img src="slides/59.jpg" height="400" />
+    <img src="slides/60.jpg" height="400" />
+    <img src="slides/61.jpg" height="400" />
+    <img src="slides/62.jpg" height="400" />
+    <img src="slides/63.jpg" height="400" />
+    <img src="slides/64.jpg" height="400" />
+    <img src="slides/65.jpg" height="400" />
+    <img src="slides/66.jpg" height="400" />
+    <img src="slides/67.jpg" height="400" />
+    <img src="slides/68.jpg" height="400" />
+    <img src="slides/69.jpg" height="400" />
+    <img src="slides/70.jpg" height="400" />
   </div>
 
 </body>
